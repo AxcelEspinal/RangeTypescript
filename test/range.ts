@@ -2,6 +2,8 @@ import { expect } from "chai";
 
 import Range from "../src/range";
 
+const methods = require("../src/range");
+
 describe('Testing Range', () => {
 
     describe('Range = [2, 6)  GetAllPoints = {2, 3, 4, 5]'), () => {
