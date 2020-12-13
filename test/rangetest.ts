@@ -21,6 +21,12 @@ describe("[5,9] EndPoints Should Be{5,9}", function () {
     });
 });
 
+describe("[7,11) EndPoints Should Be{7,10}", function () {
+    it("Should return: {7,10}", function () {
+        expect(methods.EndPoints("[7,11)")).to.be.eqls([7, 10])
+    });
+});
+
 describe("[5,6) AreEquals (4, 5]", function () {
     it("Should return: true", function () {
         expect(methods.Equals("[5,6)", "(4, 5]")).to.be.eqls(true)
@@ -39,6 +45,25 @@ describe("(3,8] AreEquals [4, 9)", function () {
     });
 });
 
+
+describe("(3,8) Not Equals [4, 9)", function () {
+    it("Should return: false", function () {
+        expect(methods.Equals("(3,8)", "[4, 9)")).to.be.eqls(false)
+    });
+});
+
+describe("[7,11) Not Equals (2, 4]", function () {
+    it("Should return: false", function () {
+        expect(methods.Equals("[7, 11)", "(2, 4]")).to.be.eqls(false)
+    });
+});
+
+describe("[7,11) Not Equals (2, 5]", function () {
+    it("Should return: false", function () {
+        expect(methods.Equals("[7, 11)", "(2, 5]")).to.be.eqls(false)
+    });
+});
+
 describe("Range (2,10] getAllPoints", function () {
     it("Should return: {3,4,5,6,7,8,9,10}", function () {
         expect(methods.GetAllPoints("(2,10]")).to.be.eqls([3, 4, 5, 6, 7, 8, 9, 10])
@@ -49,6 +74,18 @@ describe("Range (2,10] getAllPoints", function () {
 describe("Range (3,10] getAllPoints", function () {
     it("Should return: {4,5,6,7,8,9,10}", function () {
         expect(methods.GetAllPoints("(3,10]")).to.be.eqls([4, 5, 6, 7, 8, 9, 10])
+    });
+});
+
+describe("Range [3,5] getAllPoints", function () {
+    it("Should return: {3,4,5}", function () {
+        expect(methods.GetAllPoints("[3,5]")).to.be.eqls([3, 4, 5])
+    });
+});
+
+describe("Range (2,6) getAllPoints", function () {
+    it("Should return: {3,4,5}", function () {
+        expect(methods.GetAllPoints("(2,6)")).to.be.eqls([3, 4, 5])
     });
 });
 
@@ -82,4 +119,12 @@ describe("Range [3,10) Does not Overlaps (11,16]", function () {
         expect(methods.Overlaps("[3,10)", "(11,16]")).to.be.eqls(false)
     });
 });
+
+
+describe("Range [2,5) Does not Overlaps [7,10]", function () {
+    it("Should return: false", function () {
+        expect(methods.Overlaps("[2, 5)", "[7,10]")).to.be.eqls(false)
+    });
+});
+
 
