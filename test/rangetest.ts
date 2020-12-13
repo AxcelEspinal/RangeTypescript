@@ -38,3 +38,16 @@ describe("(3,8] AreEquals [4, 9)", function () {
         expect(methods.Equals("(3,8]", "[4, 9)")).to.be.eqls(true)
     });
 });
+
+describe("Range (2,10] getAllPoints", function () {
+    it("Should return: {3,4,5,6,7,8,9,10}", function () {
+        expect(methods.GetAllPoints("(2,10]")).to.be.eqls([3, 4, 5, 6, 7, 8, 9, 10])
+    });
+});
+
+
+describe("Range (3,10] getAllPoints", function () {
+    it("Should return: {4,5,6,7,8,9,10}", function () {
+        expect(methods.GetAllPoints("(3,10]")).to.be.eqls([4, 5, 6, 7, 8, 9, 10])
+    });
+});

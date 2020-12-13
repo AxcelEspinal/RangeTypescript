@@ -33,13 +33,13 @@ var GetAllPoints = function (r) {
     var R = ReadInput(r);
     var l1, r1;
     if (R.leftP === '(')
-        l1 = R.nums[0] = 1;
+        l1 = R.nums[0] + 1;
     else
         l1 = R.nums[0];
     if (R.rightP === ')')
         r1 = R.nums[R.nums.length - 1] - 1;
     else
-        r1 = R.nums[R.nums.lenght - 1];
+        r1 = R.nums[R.nums.length - 1];
     var res = [];
     for (var i = l1; i <= r1; i++) {
         res.push(i);
@@ -50,22 +50,22 @@ var Contains = function (a, b) {
     var A = ReadInput(a);
     var B = ReadInput(b);
     var l1, l2, r1, r2;
-    if (A.leftP === '(')
+    if (A.leftP === "(")
         l1 = A.nums[0] + 1;
     else
         l1 = A.nums[0];
-    if (A.leftP === ')')
-        l2 = A.nums[A.nums.lenght - 1] - 1;
+    if (A.leftP === ")")
+        r1 = A.nums[A.nums.length - 1] - 1;
     else
-        l2 = A.nums[A.nums.lenght - 1];
-    if (B.leftP === '(')
-        r1 = B.nums[0] + 1;
+        r1 = A.nums[A.nums.length - 1];
+    if (B.leftP === "(")
+        l2 = B.nums[0] + 1;
     else
-        r1 = B.nums[0];
-    if (B.leftP === ')')
-        r2 = B.nums[B.nums.lenght - 1] - 1;
+        l2 = B.nums[0];
+    if (B.leftP === ")")
+        r2 = B.nums[B.nums.length - 1] - 1;
     else
-        r2 = B.nums[B.nums.lenght - 1];
+        r2 = B.nums[B.nums.length - 1];
     return l1 <= l2 && r1 >= r2;
 };
 module.exports = {
