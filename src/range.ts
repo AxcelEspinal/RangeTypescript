@@ -1,24 +1,11 @@
-export default class Range {
-
-    public startpoint: number;
-    public endpoint: number;
-
-    constructor(startpoint, endpoint) {
-        this.startpoint = startpoint;
-        this.endpoint = endpoint;
-    }
-
-    public GetAllPoints(): string {
-        return
-
-    }
-}
 
 var ParseInput = (input) => {
-    const obj = {};
-    obj.leftP = input[0]
-    obj.rightP = input[input.length - 1]
-    obj.nums = input.substring(1, input.length - 1).split(",").map(num => Number(num));
+    const obj = {
+        leftP: input[0],
+        rightP: input[input.length - 1],
+        nums: input.substring(1, input.length - 1).split(",").map(num => Number(num))
+    };
+
     return obj;
 }
 var AreEquals = (r1, r2) => {
