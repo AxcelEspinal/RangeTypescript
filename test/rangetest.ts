@@ -64,3 +64,22 @@ describe("Range (2,7] Contains (5,9)", function () {
         expect(methods.Contains("(2,7]", "(5,9)")).to.be.eqls(false)
     });
 });
+
+describe("Range [3,5) Overlaps (2,10]", function () {
+    it("Should return: True", function () {
+        expect(methods.Overlaps("[3,5)", "(2,10]")).to.be.eqls(true)
+    });
+});
+
+describe("Range [3,6) Overlaps (2,10]", function () {
+    it("Should return: True", function () {
+        expect(methods.Overlaps("[3,6)", "(2,10]")).to.be.eqls(true)
+    });
+});
+
+describe("Range [3,10) Does not Overlaps (11,16]", function () {
+    it("Should return: false", function () {
+        expect(methods.Overlaps("[3,10)", "(11,16]")).to.be.eqls(false)
+    });
+});
+
